@@ -26,8 +26,8 @@ date_default_timezone_set('America/Sao_Paulo');
 
 // Create application, bootstrap, and run
 $application = new Zend_Application(
-    APPLICATION_ENV//,
-    //APPLICATION_PATH . '/configs/application.ini'
+    APPLICATION_ENV,
+    APPLICATION_PATH . '/configs/application.ini'
 );
 
 
