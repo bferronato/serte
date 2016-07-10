@@ -1,8 +1,5 @@
 <?php
 
-echo 'ok';
-die;
-
 // Define path to root directory
 defined('ROOT_PATH')
     || define('ROOT_PATH', realpath(dirname(__FILE__)));
@@ -30,6 +27,8 @@ $application = new Zend_Application(
     APPLICATION_ENV,
     APPLICATION_PATH . '/configs/application.ini'
 );
+
+die("ok22");
 
 // Incluindo Action Helpers
 Zend_Controller_Action_HelperBroker::addPath('./application/controllers/helpers');
