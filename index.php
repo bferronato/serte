@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL);
+
 // Define path to root directory
 defined('ROOT_PATH')
     || define('ROOT_PATH', realpath(dirname(__FILE__)));
@@ -38,6 +40,6 @@ include_once APPLICATION_PATH . '/i18n/pt-br.php';
 $translate = new Zend_Translate('array', $portugues, 'pt_BR');
 Zend_Registry::set('translate', $translate );
 
-die("ok22444");
+//die("ok22444");
 $application->bootstrap()
             ->run();
