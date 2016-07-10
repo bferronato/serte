@@ -20,6 +20,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 				        getenv('DB_CHARSET')
 			        );
 
+print_r($params);
+
 	    try{
 
 	        /**
@@ -67,9 +69,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     protected function _initDb() {
     	$params = array(
-        			getenv('DB_HOST'),
+            		getenv('DB_HOST'),
     		        getenv('DB_USERNAME'),
-    			    getenv('DB_PASSWORD'),
+        			getenv('DB_PASSWORD'),
             		getenv('DB_DBNAME'),
     		        getenv('DB_CHARSET')
         	    );
