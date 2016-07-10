@@ -1,0 +1,34 @@
+<fieldset>
+    <legend class="text-info">Previsão de receita</legend>
+    <div class="well">
+        <table>
+            <tr>
+                <td style="width: 78%;">
+                    A previsão de receita <strong>OI</strong> até o momento é de:
+                </td>
+                <td>
+                    <button class="btn btn-warning"><?php echo $this->previsaoReceitaOi; ?></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A previsão de receita <strong>Celesc</strong> até o momento é de:
+                </td>
+                <td>
+                    <button class="btn btn-warning"><?php echo $this->previsaoReceitaCelesc; ?></button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    A previsão de receita <strong>Total</strong> até o momento é de:
+                </td>
+                <td>
+                    <button class="btn btn-success"><?php echo $this->previsaoReceitaTotal; ?></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>

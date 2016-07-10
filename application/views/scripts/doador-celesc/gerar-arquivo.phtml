@@ -1,0 +1,8 @@
+<?php
+
+header("Content-Disposition: attachment; filename=\"" . basename($this->arquivo) . "\"");
+header("Content-Type: application/force-download");
+header("Connection: close");
+
+
+echo $this->remessa;

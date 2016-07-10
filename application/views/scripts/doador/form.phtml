@@ -1,0 +1,175 @@
+<?php if(sizeof($this->error)): ?>
+    <div class="alert alert-danger" role="alert">
+        <strong>Verifique os seguintes campos:</strong>
+        <br />
+        <?php foreach($this->error as $erro): ?>
+            <?php echo "&nbsp;&nbsp;&nbsp;&nbsp;{$erro}"; ?>
+            <br />
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+<fieldset>
+    <legend class="text-info"><?=$this->titulo;?></legend>
+    <div class="well">
+        <form id="formularioDoador" action="<?=$this->action;?>" class="form-horizontal" method="post">
+            <input name="id_doador" value="<?=$this->doador->id_doador;?>" id="id_doador" type="hidden">
+            <div class="control-group">
+                <label for="nome" class="control-label optional">Nome completo</label>
+                <div class="controls">
+                    <input name="nome" id="nome" value="<?=$this->doador->nome;?>" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="celular" class="control-label optional">Celular</label>
+                <div class="controls">
+                    <input name="celular" id="celular" value="<?=$this->doador->celular;?>" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="email" class="control-label optional">E-mail</label>
+                <div class="controls">
+                    <input name="email" id="email" value="<?=$this->doador->email;?>" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="rg" class="control-label optional">RG</label>
+                <div class="controls">
+                    <input name="rg" id="rg" value="<?=$this->doador->rg;?>" type="text">
+                </div>
+            </div>
+            <div class="controls">
+                <label>
+                    <input type="checkbox" name="tipo[]" <?php if($this->doador->tipo) { echo in_array("doador-oi", explode(',', $this->doador->tipo)) ? 'checked' : ''; } ?> value="doador-oi"> Doador OI
+                </label>
+                <label>
+                    <input type="checkbox" name="tipo[]" <?php if($this->doador->tipo) { echo in_array("doador-celesc", explode(',', $this->doador->tipo)) ? 'checked' : ''; } ?> value="doador-celesc"> Doador Celesc
+                </label> 
+            </div>
+            <div class="control-group" id="form-doador-oi" style="display: none;">
+                <fieldset>
+                    <legend class="text-info">Doador OI</legend>
+                    <div class="control-group">
+                        <label for="telefone" class="control-label required">Telefone</label>
+                        <div class="controls">
+                            <input name="telefone" id="telefone" value="<?=$this->doador->telefone;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="valor" class="control-label required">Valor OI</label>
+                        <div class="controls">
+                            <input name="valor" id="valor" value="<?=$this->doador->valor;?>" type="text">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="control-group" id="form-doador-celesc" style="display: none;">
+                <fieldset>
+                    <legend class="text-info">Doador Celesc</legend>
+                    <div class="control-group">
+                        <label for="codigo_unidade_consumidora" class="control-label required">Código da unidade consumidora</label>
+                        <div class="controls">
+                            <input name="codigo_unidade_consumidora" id="codigo_unidade_consumidora" value="<?=$this->doador->codigo_unidade_consumidora;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="cpf" class="control-label optional">CPF</label>
+                        <div class="controls">
+                            <input name="cpf" id="cpf" value="<?=$this->doador->cpf;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="cnpj" class="control-label optional">CNPJ</label>
+                        <div class="controls">
+                            <input name="cnpj" id="cnpj" value="<?=$this->doador->cnpj;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="valor_celesc" class="control-label required">Valor Celesc</label>
+                        <div class="controls">
+                            <input name="valor_celesc" id="valor_celesc" value="<?=$this->doador->valor_celesc;?>" type="text">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="control-group">
+                <fieldset>
+                    <legend class="text-info">Endereço</legend>
+                    <div class="control-group">
+                        <label for="cep" class="control-label optional">CEP</label>
+                        <div class="controls">
+                            <input name="cep" id="cep" value="<?=$this->doador->cep;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="estado" class="control-label optional">Estado</label>
+                        <div class="controls">
+                            <select name="estado" id="estado">
+                                <?php foreach ($this->estados as $key => $estado) { ?>
+                                    <option value="<?=$estado['id_estado'];?>" <?=($estado['id_estado'] == $this->id_estado) ? 'selected' : ''; ?> label='<?=$estado['nome'];?>'><?=$estado['nome'];?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="cidade" class="control-label optional">Cidade</label>
+                        <div class="controls">
+                            <select name="cidade" id="cidade">
+                                <?php foreach ($this->cidades as $key => $cidade) { ?>
+                                    <option value="<?=$cidade['id_cidade'];?>" <?=($cidade['id_cidade'] == $this->id_cidade) ? 'selected' : ''; ?> label='<?=$cidade['nome'];?>'><?=$cidade['nome'];?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="logradouro" class="control-label optional">Logradouro</label>
+                        <div class="controls">
+                            <input name="logradouro" id="logradouro" value="<?=$this->doador->logradouro;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="numero" class="control-label optional">Número</label>
+                        <div class="controls">
+                            <input name="numero" id="numero" value="<?=$this->doador->numero;?>" type="text">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="control-group">
+                <fieldset>
+                    <legend class="text-info">Demais Informações</legend>
+                    <div class="control-group">
+                        <label for="banco" class="control-label optional">Banco</label>
+                        <div class="controls">
+                            <input name="banco" id="banco" value="<?=$this->doador->banco;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="agencia" class="control-label optional">Agencia</label>
+                        <div class="controls">
+                            <input name="agencia" id="agencia" value="<?=$this->doador->agencia;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="conta" class="control-label optional">Conta</label>
+                        <div class="controls">
+                            <input name="conta" id="conta" value="<?=$this->doador->conta;?>" type="text">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="observacao" class="control-label optional">Observação</label>
+                        <div class="controls">
+                            <textarea name="observacao" id="observacao" rows="3" cols="80"><?=$this->doador->observacao;?></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    <input name="Cadastrar" id="Cadastrar" value="<?=$this->titulo;?>" class="btn" type="submit">
+                </div>
+            </div>
+        </form>
+	</div>
+</fieldset>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/public/js/doador/form.js?v=<?php echo filemtime( "./public/js/doador/form.js")?>"></script>

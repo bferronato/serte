@@ -1,0 +1,129 @@
+<fieldset>
+	<legend class="text-info">Visualizar Doadores</legend>
+	<form class="pesquisar">
+    	<div class="input-append">
+    		<input type="text" id="busca" name="busca" value="<?php echo $this->busca; ?>" class="span3">
+     		<button type="submit" class="btn">Pesquisar</button>
+     		<button type="button" id="limpar" class="btn btn-link">Limpar</button>
+    	</div>
+	</form>
+    <table class="table table-bordered">
+    	<tr>
+    		<th>Ação</th>
+            <th>Nome</th>
+    		<th>Valor Oi</th>
+            <th>Valor Celesc</th>
+            <th>Telefone</th>
+    		<th>E-mail</th>
+    	</tr>
+        <?php if(sizeof($this->paginator)): ?>
+            <?php foreach($this->paginator as $doador): ?>
+                <tr title="Visualizar Detalhes">
+                	<td>
+						<a class="edit" title="Editar <?php echo $doador->nome; ?>" href="<?php echo $this->url(array(
+                                       'controller' => 'doador',
+                                       'action'     => 'editar',
+                                       'id_doador' => $doador->id_doador)); ?>"><i class="icon-pencil"></i></a>
+	                    <a class="delete" title="Apagar <?php echo $doador->nome; ?>" href="<?php echo $this->url(array(
+                                       'controller' => 'doador',
+                                       'action'     => 'delete',
+                                       'id_doador' => $doador->id_doador)); ?>"><i class="icon-remove"></i></a>
+            		</td>
+                    <td class="detalhes"><?php echo $doador->nome; ?></td>
+                	<td class="detalhes"><?php echo new Zend_Currency(array('value' => $doador->valor)); ?></td>
+                	<td class="detalhes"><?php echo new Zend_Currency(array('value' => $doador->valor_celesc)); ?></td>
+                	<td class="detalhes"><?php echo $this->mask("FONE", $doador->telefone); ?></td>
+                	<td class="detalhes"><?php echo $doador->email; ?></td>
+                </tr>
+                <tr class="hide">
+                	<td colspan="6">
+                		<fieldset>
+							<legend class="text-info">Detalhes do Doador</legend>
+							<div class="row-fluid">
+                            	<div class="span12">
+                            		<strong>Telefone:&nbsp;</strong>
+                            		<?php
+                            		    echo $this->mask("FONE", $doador->telefone);
+                            		?>
+                            	</div>
+                        	</div>
+							<div class="row-fluid">
+                            	<div class="span3">
+                            		<strong>Cidade:&nbsp;</strong>
+            	                    <?php
+                                        echo $doador->findParentRow('Application_Model_Table_Cidade')->nome;
+            	                    ?>
+                            	</div>
+                            	<div class="span3">
+                            		<strong>CEP:&nbsp;</strong>
+            	                    <?php
+            	                        echo $this->mask("CEP", $doador->cep);
+            	                    ?>
+                            	</div>
+                            	<div class="span6">
+                            		<strong>Logradouro:&nbsp;</strong>
+            	                    <?php
+                                        $aux = array($doador->logradouro, $doador->numero);
+            	                        echo join(', ', array_filter($aux));
+            	                    ?>
+                            	</div>
+                        	</div>
+							<div class="row-fluid">
+                            	<div class="span3">
+									<strong>CPF:&nbsp;</strong>
+            	                    <?php
+            	                        echo $this->mask("CPF", $doador->cpf);
+            	                    ?>
+                            	</div>
+                            	<div class="span3">
+									<strong>CNPJ:&nbsp;</strong>
+            	                    <?php
+            	                        echo $this->mask("CNPJ", $doador->cnpj);
+            	                    ?>
+                            	</div>
+                            	<div class="span3">
+									<strong>RG:&nbsp;</strong>
+            	                    <?php
+            	                        echo $doador->rg;
+            	                    ?>
+                            	</div>
+                            </div>
+                            <div class="row-fluid">
+                            	<div class="span3">
+									<strong>Banco:&nbsp;</strong>
+            	                    <?php
+                	                    echo $doador->banco;
+            	                    ?>
+                            	</div>
+                            	<div class="span3">
+									<strong>Agência:&nbsp;</strong>
+            	                    <?php
+                	                    echo $doador->agencia;
+            	                    ?>
+                            	</div>
+                            	<div class="span3">
+									<strong>Conta:&nbsp;</strong>
+            	                    <?php
+                	                    echo $doador->conta;
+            	                    ?>
+                            	</div>
+                            </div>
+                            <div class="row-fluid">
+                            	<div class="span12">
+                            		<strong>Observação:&nbsp;</strong>
+            	                    <?php
+                	                    echo $doador->observacao;
+            	                    ?>
+                            	</div>
+                            </div>
+                		</fieldset>
+	                </td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr><td colspan="4">Nenhum doador encontrado.</td></tr>
+        <?php endif; ?>
+    </table>
+    <?php echo $this->paginator; ?>
+</fieldset>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/public/js/doador/index.js?v=<?php echo filemtime( "./public/js/doador/index.js")?>"></script>
