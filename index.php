@@ -16,7 +16,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
     realpath(ROOT_PATH . '/library'),
     get_include_path(),
 )));
-die("ok23332");
+//die("ok23332");
 /** Zend_Application */
 require_once 'Zend/Application.php';
 
@@ -24,8 +24,8 @@ date_default_timezone_set('America/Sao_Paulo');
 
 // Create application, bootstrap, and run
 $application = new Zend_Application(
-    APPLICATION_ENV,
-    APPLICATION_PATH . '/configs/application.ini'
+    APPLICATION_ENV//,
+    //APPLICATION_PATH . '/configs/application.ini'
 );
 
 die("ok22");
