@@ -47,35 +47,44 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     protected function _initAutoload()
     {
-        // $autoloader = new Zend_Application_Module_Autoloader(array(
-        //     'namespace' => 'Application',
-        //     'basePath'  => APPLICATION_PATH,
-        //     'resourceTypes' => array (
-        //         'form' => array(
-        //             'path' => 'forms',
-        //             'namespace' => 'Form',
-        //         ),
-        //         'model' => array(
-        //             'path' => 'models',
-        //             'namespace' => 'Model',
-        //         ),
-        //     )
-        // ));
-        // return $autoloader;
+        $autoloader = new Zend_Application_Module_Autoloader(array(
+            'namespace' => 'Application',
+            'basePath'  => APPLICATION_PATH,
+            'resourceTypes' => array (
+                'form' => array(
+                    'path' => 'forms',
+                    'namespace' => 'Form',
+                ),
+                'model' => array(
+                    'path' => 'models',
+                    'namespace' => 'Model',
+                ),
+            )
+        ));
+        
+        return $autoloader;
     }
 
-    protected function _initDb(){
-        // $resources = $this->getOption('resources');
-        // $db = Zend_Db::factory($resources['db']['adapter'],$resources['db']['params']);
-        // $db->getConnection();
-        // Zend_Db_Table_Abstract::setDefaultAdapter($db);
-        // $frontend = array('lifetime' => 86400, 'automatic_serialization' => true);
-        // $cache = Zend_Cache::factory('Core','File', $frontend, array('cache_dir' => APPLICATION_PATH . '/../tmp', 'cache_file_umask' => 0755, 'cache_file_perm' => 0755));
-        // Zend_Db_Table::setDefaultMetadataCache($cache);
+    protected function _initDb() {
+    	$params = array(
+        			getenv('DB_HOST'),
+    		        getenv('DB_USERNAME'),
+    			    getenv('DB_PASSWORD'),
+            		getenv('DB_DBNAME'),
+    		        getenv('DB_CHARSET')
+        	    );
+				        
+        $resources = $this->getOption('resources');
+        $db = Zend_Db::factory(getenv('DB_ADAPTER'), $params);
+        $db->getConnection();
+        Zend_Db_Table_Abstract::setDefaultAdapter($db);
+        $frontend = array('lifetime' => 86400, 'automatic_serialization' => true);
+        $cache = Zend_Cache::factory('Core', 'File', $frontend, array('cache_dir' => APPLICATION_PATH . '/../tmp', 'cache_file_umask' => 0755, 'cache_file_perm' => 0755));
+        Zend_Db_Table::setDefaultMetadataCache($cache);
     }
 
     protected function _initHelpers() {
-        // Zend_Controller_Action_HelperBroker::addPath(APPLICATION_PATH . '/controllers/helpers');
+        Zend_Controller_Action_HelperBroker::addPath(APPLICATION_PATH . '/controllers/helpers');
     }
 
 	/**
@@ -83,8 +92,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
      */
     protected function _initPaginator()
     {
-        // Zend_Paginator::setDefaultScrollingStyle('Sliding');
-        // Zend_View_Helper_PaginationControl::setDefaultViewPartial('pagination.phtml');
+        Zend_Paginator::setDefaultScrollingStyle('Sliding');
+        Zend_View_Helper_PaginationControl::setDefaultViewPartial('pagination.phtml');
     }
 
 }
