@@ -4,7 +4,7 @@ require_once 'DoadorController.php';
 
 class DoadorOiController extends DoadorController {
 
-    private $codigoDeTerceiro = CODIGO_DE_TERCEIRO_OI;
+    private $codigoDeTerceiro = getenv('CODIGO_DE_TERCEIRO_OI');
     private $numeroDaRemessa;
 
     public function init() {

@@ -4,11 +4,11 @@ require_once 'DoadorController.php';
     
 class DoadorCelescController extends DoadorController {
 
-    private $numeroContrato = NUMERO_CONTRATO_CELESC;
-    private $codigoConcessionaria = CODIGO_CONCESSIONARIA_CELESC; // 4 digitos
-    private $nomeConveniado = NOME_CONVENIADO_CELESC;             // 5 digitos
-    private $codigoDaConta = CODIGO_DA_CONTA_CELESC;
-    private $coberturaOcorrencia = COBERTURA_OCORRENCIA_CELESC;
+    private $numeroContrato = getenv('NUMERO_CONTRATO_CELESC');
+    private $codigoConcessionaria = getenv('CODIGO_CONCESSIONARIA_CELESC'); // 4 digitos
+    private $nomeConveniado = getenv('NOME_CONVENIADO_CELESC');             // 5 digitos
+    private $codigoDaConta = getenv('CODIGO_DA_CONTA_CELESC');
+    private $coberturaOcorrencia = getenv('COBERTURA_OCORRENCIA_CELESC');
     private $sequenciaEnvio;
 
     public function init() {
