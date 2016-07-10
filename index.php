@@ -28,7 +28,7 @@ $application = new Zend_Application(
     //APPLICATION_PATH . '/configs/application.ini'
 );
 
-die("ok22");
+//die("ok22");
 
 // Incluindo Action Helpers
 Zend_Controller_Action_HelperBroker::addPath('./application/controllers/helpers');
