@@ -18,7 +18,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
     realpath(ROOT_PATH . '/library'),
     get_include_path(),
 )));
-//die("ok23332");
+
 /** Zend_Application */
 require_once 'Zend/Application.php';
 
@@ -30,8 +30,6 @@ $application = new Zend_Application(
     APPLICATION_PATH . '/configs/application.ini'
 );
 
-
-
 // Incluindo Action Helpers
 Zend_Controller_Action_HelperBroker::addPath('./application/controllers/helpers');
 
@@ -40,6 +38,5 @@ include_once APPLICATION_PATH . '/i18n/pt-br.php';
 $translate = new Zend_Translate('array', $portugues, 'pt_BR');
 Zend_Registry::set('translate', $translate );
 
-//die("ok22444");
 $application->bootstrap()
             ->run();
