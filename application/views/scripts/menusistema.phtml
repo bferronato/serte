@@ -1,0 +1,35 @@
+<?php
+$total = new Zend_Session_Namespace('Total');
+?>
+<div class="span3">
+	<div class="well sidebar-nav">
+        <ul class="nav nav-list">
+			<li class="nav-header">Doadores (<?php echo $total->doadores; ?>)</li>
+            <li>
+				<a href="<?php echo $this->baseUrl(); ?>/doador/cadastrar/"><i class="icon-user"></i> Cadastrar</a>
+			</li>
+			<li>
+				<a href="<?php echo $this->baseUrl(); ?>/doador/index/"><i class="icon-list"></i> Visualizar</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="<?php echo $this->baseUrl(); ?>/doador-oi/gerar-arquivo"><i class="icon-user"></i> Gerar Arquivo OI</a>
+            </li>
+            <li>
+				<a href="<?php echo $this->baseUrl(); ?>/doador-celesc/gerar-arquivo"><i class="icon-user"></i> Gerar Arquivo Celesc</a>
+			</li>
+            <li class="divider"></li>
+			<li>
+				<a href="<?php echo $this->baseUrl(); ?>/doador/previsao-receita/"><i class="icon-list"></i> Previsão de Receita</a>
+			</li>
+            <li class="divider"></li>
+            <li>
+				<a href="<?php echo $this->baseUrl(); ?>/sobre/index/"><i class="icon-leaf"></i> Sobre</a>
+			</li>
+            <li class="divider"></li>
+            <li>
+				<a href="<?php echo $this->baseUrl(); ?>/auth/logout/"><i class="icon-off"></i> Sair</a>
+			</li>
+        </ul>
+	</div>
+</div>
