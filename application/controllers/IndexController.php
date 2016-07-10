@@ -5,12 +5,12 @@ class IndexController extends Zend_Controller_Action
 
     public function init()
     {
-		//$this->_helper->layout->setLayout ( 'login' );
+	$this->_helper->layout->setLayout('login');
     }
 
     public function indexAction()
     {
-        //$this->_redirect('auth');
+        $this->_redirect('auth');
     }
 
 }
