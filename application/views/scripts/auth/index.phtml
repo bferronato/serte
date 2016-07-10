@@ -1,0 +1,29 @@
+<fieldset>
+	<legend class="text-info">Acesso restrito</legend>
+	<div class='well'>
+        <form class="form-horizontal" action="../auth/login" method="post">
+            <?php
+            if($this->message) {
+                echo "<div class='alert alert-error'>{$this->message}</div>";
+            }
+            ?>
+            <div class="control-group">
+            	<label class="control-label" for="email">E-mail</label>
+            	<div class="controls">
+            		<input type="text" id="email" name="email" placeholder="Email">
+            	</div>
+            </div>
+            <div class="control-group">
+            	<label class="control-label" for="senha">Senha</label>
+           		<div class="controls">
+                	<input type="password" id="senha" name="senha" placeholder="Senha">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                	<button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</fieldset>
