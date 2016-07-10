@@ -13,12 +13,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	     */
 	    $db_adapter = getenv('DB_ADAPTER');
 	    $params     = array(
-			        	getenv('DB_HOST'),
-				        getenv('DB_USERNAME'),
-        				getenv('DB_PASSWORD'),
-		        		getenv('DB_DBNAME'),
-				        getenv('DB_CHARSET')
-			        );
+                        'host'     => getenv('DB_HOST'),
+                        'username' => getenv('DB_USERNAME'),
+                        'password' => getenv('DB_PASSWORD'),
+                        'dbname'   => getenv('DB_DBNAME'),
+                        'charset'  => getenv('DB_CHARSET')
+                    );
+        
 
 print_r($params);
 
@@ -69,12 +70,12 @@ print_r($params);
 
     protected function _initDb() {
     	$params = array(
-            		getenv('DB_HOST'),
-    		        getenv('DB_USERNAME'),
-        			getenv('DB_PASSWORD'),
-            		getenv('DB_DBNAME'),
-    		        getenv('DB_CHARSET')
-        	    );
+                    'host'     => getenv('DB_HOST'),
+                    'username' => getenv('DB_USERNAME'),
+                    'password' => getenv('DB_PASSWORD'),
+                    'dbname'   => getenv('DB_DBNAME'),
+                    'charset'  => getenv('DB_CHARSET')
+                  );
 				        
         $resources = $this->getOption('resources');
         $db = Zend_Db::factory(getenv('DB_ADAPTER'), $params);
