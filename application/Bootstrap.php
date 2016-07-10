@@ -15,7 +15,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    // $db_adapter = $options['db']['adapter'];
 	    // $params     = $options['db']['params'];
 
-	    try{
+	    //try{
 
 	        /**
 	         * Este método carrega dinamicamente a classe adptadora
@@ -42,7 +42,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 	}
 
-	protected function _initAutoload()
+    protected function _initAutoload()
     {
         $autoloader = new Zend_Application_Module_Autoloader(array(
             'namespace' => 'Application',
