@@ -11,34 +11,37 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	    /**
 	     * Obtém os resources(recursos).
 	     */
-	    // $options    = $this->getOption('resources');
-	    // $db_adapter = $options['db']['adapter'];
-	    // $params     = $options['db']['params'];
+	    $db_adapter = getenv('DB_ADAPTER');
+	    $params     = array(
+			        	getenv('DB_HOST'),
+				        getenv('DB_USERNAME'),
+        				getenv('DB_PASSWORD'),
+		        		getenv('DB_DBNAME'),
+				        getenv('DB_CHARSET')
+			        );
 
-	    //try{
+	    try{
 
 	        /**
 	         * Este método carrega dinamicamente a classe adptadora
 	         * usando Zend_Loader::loadClass().
 	         */
-	        // $db = Zend_Db::factory($db_adapter, $params);
+	        $db = Zend_Db::factory($db_adapter, $params);
 
 	        /**
 	         * Este método retorna um objeto para a conexão representada por uma
 	         * respectiva extensão de banco de dados.
 	         */
-	        // $db->getConnection();
+	        $db->getConnection();
 
 	        // Registra a $db para que se torne acessível em toda app
-	        // $registry = Zend_Registry::getInstance();
-	        // $registry->set('db', $db);
+	        $registry = Zend_Registry::getInstance();
+	        $registry->set('db', $db);
 
-	    // }catch( Zend_Exception $e){
-
-	    //     echo "Estamos sem conexão ao banco de dados neste momento. Tente mais tarde por favor.";
-
-	    //     exit;
-	    // }
+	     } catch( Zend_Exception $e) {
+	         echo "Estamos sem conexão ao banco de dados neste momento. Tente mais tarde por favor.";
+	         exit;
+	     }
 
 	}
 
