@@ -16,7 +16,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
     realpath(ROOT_PATH . '/library'),
     get_include_path(),
 )));
-
+die("ok23332");
 /** Zend_Application */
 require_once 'Zend/Application.php';
 
