@@ -4,11 +4,11 @@ require_once 'DoadorController.php';
     
 class DoadorCelescController extends DoadorController {
 
-    private $numeroContrato = getenv('NUMERO_CONTRATO_CELESC');
-    private $codigoConcessionaria = getenv('CODIGO_CONCESSIONARIA_CELESC'); // 4 digitos
-    private $nomeConveniado = getenv('NOME_CONVENIADO_CELESC');             // 5 digitos
-    private $codigoDaConta = getenv('CODIGO_DA_CONTA_CELESC');
-    private $coberturaOcorrencia = getenv('COBERTURA_OCORRENCIA_CELESC');
+    private $numeroContrato;
+    private $codigoConcessionaria; // 4 digitos
+    private $nomeConveniado;       // 5 digitos
+    private $codigoDaConta;
+    private $coberturaOcorrencia;
     private $sequenciaEnvio;
 
     public function init() {
@@ -16,19 +16,24 @@ class DoadorCelescController extends DoadorController {
         parent::init();
         
         /*
-         * @todo Número sequencial 6 dígitos
+         * @todo Número sequencial 6 dígito
          */
         $this->sequenciaEnvio = '000007';
+        $this->codigoConcessionaria = getenv('CODIGO_CONCESSIONARIA_CELESC');
+        $this->codigoDaConta = getenv('CODIGO_DA_CONTA_CELESC');
+        $this->coberturaOcorrencia = getenv('COBERTURA_OCORRENCIA_CELESC');
                         
         /*
          * Número do contrato da Celesc, contém 56 caracteres
          */
-        $this->numeroContrato = str_pad($this->numeroContrato, 56, " ", STR_PAD_RIGHT);
-        
+        $numeroContrato = getenv('NUMERO_CONTRATO_CELESC');
+        $this->numeroContrato = str_pad($numeroContrato, 56, " ", STR_PAD_RIGHT);
+
         /*
          * Nome do conveniado Celesc, contém 20 caracteres
          */
-        $this->nomeConveniado = str_pad($this->nomeConveniado, 20, " ", STR_PAD_RIGHT);
+        $nomeConveniado = getenv('NOME_CONVENIADO_CELESC');
+        $this->nomeConveniado = str_pad($nomeConveniado, 20, " ", STR_PAD_RIGHT);
     }
     
     function gerarArquivoAction() {
