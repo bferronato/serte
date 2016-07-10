@@ -1,7 +1,7 @@
 <?php
 
-//echo 'ok';
-//die;
+echo 'ok';
+die;
 
 // Define path to root directory
 defined('ROOT_PATH')
