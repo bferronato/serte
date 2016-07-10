@@ -1,0 +1,281 @@
+html, body {height:100%;}
+* html #tudo {height: 100%;}
+
+body {
+	margin:0;
+	padding:0;
+	background:#FFFFFF;
+	/*
+	background:#fff url(../img/bg.png);
+	*/
+	color:black;
+	font:75%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+.bold {
+	font-weight: bold;
+}
+#tudo{
+	width:95%;
+	position:relative;  /*Contexto de posicionamento */
+	/*
+	background:#fff url(../img/bg.png);
+	*/
+	
+
+	margin:0 auto;
+	text-align:left;
+	min-height:100%;
+	border: 0px solid #000000;
+}
+#conteudo {padding-bottom:30px;}
+
+#topo{
+	background:#cfc;
+	/*background-color:rgb(100, 200, 100);*/
+	background-color:rgb(52, 102, 55);
+	background:#FFFFFF;
+	/*background:#fff url(/sajproj/images/martelo.jpg);*/
+	/*
+	background:#fff url(../img/bg.png);
+	*/
+	width:100%;
+	height:60px;
+	border-bottom:0px solid #000000;
+	text-align:center;
+	padding-top:1px;
+}
+#principal {
+	width:94%;
+	/*padding-left:20px;*/
+	/*float:left;*/
+	/*padding-top:10px;*/
+	text-align:justify;
+	border:solid red;
+	border-width:0px;
+	overflow: auto;
+}
+#auxiliar{
+	/*width:100%;
+	float:left;
+	border:solid #000000;
+	border-width:0px;*/
+}
+.errors {
+	color: red;
+}
+/*DL, DT, DD TAGS LIST DATA*/
+dl {
+    margin-bottom:50px;
+}
+ 
+dl dt {
+    /*background:#5f9be3;*/
+    color:#000;
+    float:left; 
+	font-size: 1.1em;
+    margin-right:20px; 
+    padding:5px;  
+    width:150px; 
+}
+input {
+	width: 200px;
+}
+dl dd {
+    margin:2px 0; 
+    padding:5px 0;
+}
+.hide {
+	display: none;
+}
+
+
+
+#leftmenu{
+	border: solid #000000;
+	border-width: 0px;
+	border-left: 0px;
+	border-top: 0px;
+	float: left;
+	height: 100%;
+	min-height: 300px;
+}
+#rightmenu{
+	border: solid #000000;
+	border-width: 0px;
+	float: right;
+	height: 100%;
+	min-height: 300px;
+	width: 15px;
+}
+#rodape{
+	background-color:rgb(100, 200, 100);
+	background-color:rgb(52, 102, 55);
+	background:#175169;
+	
+	color:white;
+	font-weight:bold;
+	width:100%;
+	height:20px;
+	position: absolute;
+	bottom: 0; /**/ 
+	border:solid #000;
+	border-width:1px;
+	text-align:center;
+	left: -1px;
+}
+#rodape p{
+	margin:0;
+	color:#FFFFFF;
+	font: bold Arial, Helvetica, sans-serif;
+	font-family: sans-serif;
+	font-stretch: ultra-expanded;
+}
+h1, h2, h4 {
+	font: bold 22px Arial, Helvetica, sans-serif;
+	font-family: Helvetica;
+	color: #060;
+	color: black;
+}
+h4 {font-size:16px;}
+
+.clear {clear:both;}
+.center {text-align: center;}
+
+.form {
+	margin: 10px;
+}
+.cinza_11{
+	font-size:11px;
+}
+.cinzab_11{
+	font-size:11px;
+	font-weight:bold;
+}
+.lista_processos{
+	border:solid #000000;
+	/*cima direita baixo esquerda*/
+	border-width: 1px 1px 1px 1px;
+	font-size:11px;
+	width:100%;
+}
+.lista_naturezas{
+	border:solid #000000;
+	/*cima direita baixo esquerda*/
+	border-width: 1px 1px 1px 1px;
+	font-size:11px;
+	width:100%;
+}
+.tableLink{
+	border:solid #000000;
+	/*cima direita baixo esquerda*/
+	border-width: 1px 1px 1px 1px;
+	font-size:11px;
+	width:90%;
+}
+.tableLink a, visited, active{
+	text-decoration: none;
+	color: blue;
+}
+.tableLink a:hover{
+	text-decoration: underline;
+}
+.message{
+	font-size:10px;
+	color: red;
+	font-weight: bold;
+}
+.informativo{
+	font-size:10px;
+	color: gray;
+}
+.input{
+	border:solid #000000;
+	/*cima direita baixo esquerda*/
+	border-width: 1px 1px 1px 1px;
+	color: black;
+	font-size:11px;
+	background-color: rgb(100, 200, 100);
+	background-color:rgb(255, 255, 255);
+}
+.input:focus{
+	background-color:rgb(255, 255, 100);
+}
+.button{
+	border:solid #000000;
+	/*cima direita baixo esquerda*/
+	border-width: 0px 0px 0px 0px;
+	color: white;
+	font-size:11px;
+	background-color: rgb(100, 200, 100);
+	background-color:rgb(52, 102, 55);
+}
+#form_login{
+	left:40%;
+	top:25%;
+	position: absolute;
+}
+.input2{
+	border:solid #000000;
+	border-width: 1px 1px 1px 1px;
+}
+.select{
+	border:solid #000000;
+	border-width: 1px 1px 1px 1px;
+	font-size:11px;
+}
+.brancob_11{
+	font-size:11px;
+	font-weight:bold;
+	color: white;
+}
+.link{
+	text-decoration: none;
+	color: maroon;
+}
+.link ove:HOVER{
+	color: red;
+}
+
+/* MENU */
+ul{
+	list-style:none;
+}
+#menu li {
+	float:left;
+	position:relative;
+	padding-bottom: 1px;
+}
+#menu li ul {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	margin:21px 0 0 0;
+	padding:0;
+}
+#menu li:hover ul { 
+	display:block;
+	padding-top: 1px;
+}
+#menu li a{
+	display:block;
+	padding:.2em 2.5em;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:11px;
+	color: #FFF;
+	background-color: gray;
+	
+	
+	border:solid #FFFFFF;
+	border-width: 1px 1px 1px 1px;
+	
+}
+#menu li ul{
+	background-color: gray;
+}
+#menu li ul a{
+	color:#fff;
+}
+/* FIM MENU */

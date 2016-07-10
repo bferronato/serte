@@ -1,0 +1,183 @@
+html, body {height:100%;}
+* html #tudo {height: 100%;}
+
+body {
+	margin:0;
+	padding:0;
+	background:#FFFFFF;
+	/*
+	background:#fff url(../img/bg.png);
+	*/
+	color:black;
+	font:75%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+.bold {
+	font-weight: bold;
+}
+#tudo{
+	width:95%;
+	position:relative;  /*Contexto de posicionamento */
+	/*
+	*/
+	background:#fff url(../img/bg.png);
+	background:#fcf5e0;
+	background:#E7EDEF;
+	margin:0 auto;
+	text-align:left;
+	min-height:100%;
+	border: 0px solid #000000;
+}
+#conteudo {padding-bottom:30px;}
+
+#topo{
+	background:#cfc;
+	/*background-color:rgb(100, 200, 100);*/
+	background-color:rgb(52, 102, 55);
+	background:#FFFFFF;
+	/*background:#fff url(/sajproj/images/martelo.jpg);*/
+	/*
+	background:#fff url(../img/bg.png);
+	*/
+	width:100%;
+	height:60px;
+	border-bottom:0px solid #000000;
+	text-align: left;
+	/*
+	*/
+	
+	background:#175169;
+    
+    color:white;
+}
+#topo a {
+	margin: 0 10px;
+    color: #F89E2D;
+	line-height: 50px;
+    vertical-align: middle;
+}
+#topo h4 {
+    color:#37B847;
+    color: white;
+}
+#principal {
+	width:98%;
+	/*padding-left:20px;*/
+	/*float:left;*/
+	/*padding-top:10px;*/
+	text-align:justify;
+	border:solid red;
+	border-width:0px;
+	overflow: auto;
+}
+#principal h2 {
+	color: #175169;
+	margin: 30px 0 0 30px;
+	padding: 10px 0 0 10px;
+}
+#auxiliar{
+	/*width:100%;
+	float:left;
+	border:solid #000000;
+	border-width:0px;*/
+}
+.errors {
+	color: red;
+}
+/*DL, DT, DD TAGS LIST DATA*/
+dl {
+    margin-bottom:50px;
+}
+
+dl dt {
+    /*background:#5f9be3;*/
+    color:#000;
+    float:left; 
+	font-size: 1.1em;
+    margin-right:20px; 
+    padding:5px;  
+    width:15em;
+    /*
+    */
+}
+dl dd {
+    margin:2px 0; 
+    padding:5px 0;
+}
+.hide {
+	display: none;
+}
+form.comunicacao_livre {
+	border: 0px solid red;
+    width: 100%;
+}
+form.comunicacao_livre .input {
+    width: 300px;
+	/*
+	color: red;
+	*/
+	border: 1px solid gray;
+}
+form.comunicacao_livre .zend_form {
+	border: 1px solid gray;
+	margin: 30px;
+	padding: 10px;
+}
+input {
+	width: 250px;
+}
+#leftmenu{
+	border: solid #000000;
+	border-width: 0px;
+	border-left: 0px;
+	border-top: 0px;
+	float: left;
+	height: 100%;
+	min-height: 300px;
+}
+#rightmenu{
+	border: solid #000000;
+	border-width: 0px;
+	float: right;
+	height: 100%;
+	min-height: 300px;
+	width: 15px;
+}
+#rodape{
+	background-color:rgb(100, 200, 100);
+	background-color:rgb(52, 102, 55);
+	background:#175169;
+	
+	color:white;
+	font-weight:bold;
+	width:100%;
+	height:20px;
+	position: absolute;
+	bottom: 0; /**/ 
+	border:solid #000;
+	border-width:0px;
+	text-align:center;
+	left: -1px;
+}
+#rodape p{
+	margin:0;
+	color:#FFFFFF;
+	font: bold Arial, Helvetica, sans-serif;
+	font-family: sans-serif;
+	font-stretch: ultra-expanded;
+}
+h1, h2, h4 {
+	font: bold 22px Arial, Helvetica, sans-serif;
+	font-family: Helvetica;
+	color: #060;
+	color: black;
+}
+h4 {font-size:16px;}
+
+.clear {clear:both;}
+.center {text-align: center;}
+
+
+
+
+
