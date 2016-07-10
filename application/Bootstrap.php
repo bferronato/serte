@@ -19,10 +19,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                         'dbname'   => getenv('DB_DBNAME'),
                         'charset'  => getenv('DB_CHARSET')
                     );
-        
-
-print_r($params);
-
 	    try{
 
 	        /**
