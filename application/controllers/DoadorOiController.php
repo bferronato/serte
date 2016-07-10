@@ -4,13 +4,15 @@ require_once 'DoadorController.php';
 
 class DoadorOiController extends DoadorController {
 
-    private $codigoDeTerceiro = getenv('CODIGO_DE_TERCEIRO_OI');
+    private $codigoDeTerceiro;
     private $numeroDaRemessa;
 
     public function init() {
 
         parent::init();
         
+        $this->codigoDeTerceiro = getenv('CODIGO_DE_TERCEIRO_OI');
+
         /*
          * Número da remessa (deverá evoluir de 1 em 1 todo mes, nao podendo ser repetido).
          * Lembrando que sempre para o primeiro arquivo do ano o número da remessa deve ser 001 independente do mês de envio.
