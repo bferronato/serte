@@ -20,29 +20,3 @@ $('.detalhes').click(function(e) {
 }).css('cursor','pointer');
 
 $('#busca').focus();
-
-//function Doador() {
-//	// Private variable
-//	var name;
-//
-//	// Private method
-//	var privateMethod = function(){
-//		// Access to private fields
-//		name += " Changed";
-//	};
-//
-//	return {
-//	    // Public methods
-//	    setName: function(newName) {
-//	        name = newName;
-//	        privateMethod();
-//	    },
-//	    getName: function() {
-//	        return name;
-//	    }
-//	};
-//}
-//
-//var user = new User();
-//user.setName("My Name");
-//user.getName(); // My Name Changed

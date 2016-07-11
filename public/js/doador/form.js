@@ -37,15 +37,6 @@
         }, "json");
     });
 
-//    $("#formularioDoador").on("click", '.deleteProcesso', function() {
-//        var confirm = confirm("Você tem certeza que deseja excluir o processo selecionado?");
-//        if (confirm) {
-//            $(this).parent().remove();
-//            deleteProcesso($(this).attr('title'));
-//        }
-//    });
-
-
     /**
      * Validacao do formulario de cadastro/edicao de doadores
      */
@@ -69,7 +60,4 @@
             }
         }
     });
-    //$.validator.addMethod("domain", function(value, element) {
-    //    return this.optional(element) || /^http:\/\/mycorporatedomain.com/.test(value);
-    //}, "Please specify the correct domain for your documents");
 })(jQuery);
