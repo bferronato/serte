@@ -112,7 +112,7 @@ class Application_Form_Doador extends Zend_Form
         ;
 
         $email = new Zend_Form_Element_Text('email');
-        $email->setLabel('E-mail')
+        $email->setLabel('E-mail 22222')
               ->setValue($doador->email);
         $email->setDecorators( array(
             'ViewHelper',
