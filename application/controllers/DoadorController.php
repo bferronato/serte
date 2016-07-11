@@ -229,7 +229,7 @@ class DoadorController extends Zend_Controller_Action {
             
             if(empty($data['cpf']) && empty($data['cnpj'])) {
                 if(empty($data['cpf'])) {
-                    $error[] = 'Preencha o CPF.';
+                    //$error[] = 'Preencha o CPF.';
                 }
                 if(empty($data['cnpj'])) {
                     $error[] = 'Preencha o CNPJ.';
@@ -243,7 +243,7 @@ class DoadorController extends Zend_Controller_Action {
         
         $cpfValido = $this->_helper->CPF->valido($data['cpf']);
         if(!$cpfValido) {
-            $error[] = 'O CPF informado é inválido.';
+            //$error[] = 'O CPF informado é inválido.';
         }
 
         return $error;
