@@ -10,16 +10,16 @@ class Zend_View_Helper_Mask extends Zend_View_Helper_Abstract
     public function mask($mask, $str)
 	{
 		$mask = $this->getMask($mask);
-
+	
 		if(!$str) $mask = $str;
-
+	
 		$str = str_replace(" ", "", $str);
 		for($i = 0; $i < strlen($str); $i++) {
 			$mask[strpos($mask, "#")] = $str[$i];
 		}
 		return $mask;
 	}
-
+	
 	private function getMask($mask)
 	{
 		switch($mask) {
@@ -36,7 +36,7 @@ class Zend_View_Helper_Mask extends Zend_View_Helper_Abstract
 				$mask = Zend_View_Helper_Mask::CNPJ;
 			break;
 		}
-
+	
 		return $mask;
 	}
 
