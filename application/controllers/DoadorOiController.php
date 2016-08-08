@@ -108,8 +108,8 @@ class DoadorOiController extends DoadorController {
         $trailler = '9'
                 . str_pad(count($doadores), 6, "0", STR_PAD_LEFT)
                 . str_pad($soma, 15, "0", STR_PAD_LEFT)
-                . str_repeat(chr(32), 78); // 78 espacos, filler
-                //. PHP_EOL;
+                . str_repeat(chr(32), 78) // 78 espacos, filler
+                . PHP_EOL;
 
         /*
          * Monta o arquivo de remessa
