@@ -143,7 +143,12 @@ class Zend_Cache_Core
             Zend_Cache::throwException("Options passed were not an array"
             . " or Zend_Config instance.");
         }
-        while (list($name, $value) = each($options)) {
+        // while (list($name, $value) = each($options)) {
+        //     $this->setOption($name, $value);
+        // }
+
+        // Ajuste realizado dia 30/08/2020
+        foreach ($options as $name => $value){
             $this->setOption($name, $value);
         }
         $this->_loggerSanity();
