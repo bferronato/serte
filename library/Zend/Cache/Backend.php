@@ -63,7 +63,12 @@ class Zend_Cache_Backend
      */
     public function __construct(array $options = array())
     {
-        while (list($name, $value) = each($options)) {
+        // while (list($name, $value) = each($options)) {
+        //     $this->setOption($name, $value);
+        // }
+
+        // Ajuste realizado dia 30/08/2020
+        foreach ($options as $name => $value){
             $this->setOption($name, $value);
         }
     }
