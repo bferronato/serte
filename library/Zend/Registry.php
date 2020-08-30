@@ -203,7 +203,10 @@ class Zend_Registry extends ArrayObject
      */
     public function offsetExists($index)
     {
-        return array_key_exists($index, $this);
+        //return array_key_exists($index, $this);
+        
+        // Ajuste realizado dia 30/08/2020
+        return property_exists($index, $this);
     }
 
 }
